@@ -321,14 +321,17 @@
 
   /* ── Mobile / Responsive ── */
   @media (max-width: 768px) {
-    html { overflow: auto; height: auto; }
+    html { overflow: visible; overflow-y: auto; height: auto; }
     body {
       display: block;
       overflow-x: hidden;
       overflow-y: auto;
-      scroll-snap-type: y mandatory;
+      scroll-snap-type: y proximity;
       overscroll-behavior-y: contain;
+      overscroll-behavior-x: none;
       height: auto;
+      touch-action: pan-y;
+      -webkit-overflow-scrolling: touch;
     }
 
     .slide {
@@ -339,6 +342,13 @@
       padding: 80px 24px 60px;
       scroll-snap-align: start;
       scroll-snap-stop: normal;
+      touch-action: pan-y;
+    }
+
+    #globe-container,
+    #globe-container canvas {
+      pointer-events: none !important;
+      touch-action: none !important;
     }
 
     .slide-cover { padding-bottom: 60px; }
