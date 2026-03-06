@@ -321,13 +321,12 @@
 
   /* ── Mobile / Responsive ── */
   @media (max-width: 768px) {
-    html { overflow: auto; height: auto; }
+    html { height: auto; }
     body {
       display: block;
       overflow-x: hidden;
-      overflow-y: auto;
-      scroll-snap-type: y mandatory;
-      overscroll-behavior-y: contain;
+      overflow-y: scroll;
+      scroll-snap-type: none;
       height: auto;
     }
 
@@ -335,9 +334,9 @@
       width: 100vw;
       min-width: 100vw;
       height: auto;
-      min-height: 100vh;
+      min-height: 100dvh;
       padding: 80px 24px 60px;
-      scroll-snap-align: start;
+      scroll-snap-align: none;
     }
 
     .slide-cover { padding-bottom: 60px; }
