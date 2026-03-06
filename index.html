@@ -321,21 +321,23 @@
 
   /* ── Mobile / Responsive ── */
   @media (max-width: 768px) {
-    html { overflow: auto; height: auto; }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
     body {
       display: block;
       overflow-x: hidden;
-      overflow-y: auto;
+      overflow-y: scroll;
       scroll-snap-type: y mandatory;
-      overscroll-behavior-y: contain;
-      height: auto;
+      height: 100dvh;
     }
 
     .slide {
       width: 100vw;
       min-width: 100vw;
       height: auto;
-      min-height: 100vh;
+      min-height: 100dvh;
       padding: 80px 24px 60px;
       scroll-snap-align: start;
     }
