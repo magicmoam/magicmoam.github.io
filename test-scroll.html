@@ -321,12 +321,13 @@
 
   /* ── Mobile / Responsive ── */
   @media (max-width: 768px) {
-    html { height: auto; }
+    html { overflow: auto; height: auto; }
     body {
       display: block;
       overflow-x: hidden;
-      overflow-y: scroll;
-      scroll-snap-type: none;
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
+      overscroll-behavior-y: contain;
       height: auto;
     }
 
@@ -334,9 +335,9 @@
       width: 100vw;
       min-width: 100vw;
       height: auto;
-      min-height: 100dvh;
+      min-height: 100vh;
       padding: 80px 24px 60px;
-      scroll-snap-align: none;
+      scroll-snap-align: start;
     }
 
     .slide-cover { padding-bottom: 60px; }
@@ -382,7 +383,7 @@
 
     .nav-controls { display: none !important; }
 
-    #globe-container { opacity: 1; }
+    #globe-container { display: none !important; }
   }
 
   /* ── Print / PDF Export ── */
